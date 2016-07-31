@@ -5,7 +5,7 @@ using Base.Test
 p = Pedigree([0,0,1,1,4,5],[0,0,2,0,3,2])
 Ltrans(p)
 
-fid = h5open(Pkg.dir("Pedigrees","data","pedCows.h5"))
+fid = h5open(joinpath(dirname(@__FILE__),"..","data","pedCows.h5"))
 const sire = readmmap(fid["sire"]);
 const dam = readmmap(fid["dam"]);
 close(fid)
